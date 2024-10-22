@@ -1,5 +1,6 @@
 FROM ros:noetic-ros-core
-RUN useradd -m robm -p thymio -s /bin/bash 
+RUN useradd -m robm -s /bin/bash 
+RUN passwd robm
 WORKDIR /home/robm
 SHELL ["/bin/bash", "-c"] 
 
