@@ -1,9 +1,8 @@
 FROM ros:noetic-ros-core
 RUN useradd -m robm -s /bin/bash 
-RUN echo "${USER}:pass" | chpasswd
 WORKDIR /home/robm
 SHELL ["/bin/bash", "-c"] 
-
+RUN echo "robm:thymio" | chpasswd
 
 RUN apt-get update && apt-get install -y python3-venv 
 
