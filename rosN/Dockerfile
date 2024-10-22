@@ -1,6 +1,6 @@
 FROM ros:noetic-ros-core
 RUN useradd -m robm -s /bin/bash 
-RUN passwd robm
+RUN echo "${USER}:pass" | chpasswd
 WORKDIR /home/robm
 SHELL ["/bin/bash", "-c"] 
 
