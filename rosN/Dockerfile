@@ -1,5 +1,5 @@
 FROM ros:noetic-ros-core
-RUN useradd -m robm -s /bin/bash 
+RUN useradd -m robm -G sudo -s /bin/bash 
 WORKDIR /home/robm
 SHELL ["/bin/bash", "-c"] 
 RUN echo "robm:thymio" | chpasswd
