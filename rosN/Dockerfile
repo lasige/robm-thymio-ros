@@ -4,7 +4,7 @@ WORKDIR /home/robm
 SHELL ["/bin/bash", "-c"] 
 RUN echo "robm:thymio" | chpasswd
 
-RUN apt-get update && apt-get install -y python3-venv 
+RUN apt-get update && apt-get install -y python3-venv git
 
 USER robm
 RUN python3 -m venv ~/venv/venv_robm
