@@ -13,4 +13,4 @@ USER robm
 RUN python3 -m venv ~/venv/venv_robm
 RUN ~/venv/venv_robm/bin/pip install thymiodirect
 RUN echo "source ./venv/venv_robm/bin/activate" >> ~/.bashrc
-
+RUN echo "source /opt/ros/noetic/setup.bash" >> ~/.bashrc
