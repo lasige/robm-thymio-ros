@@ -4,6 +4,6 @@ pend_robot:
     publish_rate: 50
 
   effort_controller:                                    # Name of the controller
-      type: "effort_controllers/EffortController"         # Since JointA uses effort interface this controller type is  used      
-      joint: "motor_joint"                                # Name of the joint for which this controller belongs to.
+      type: "effort_controllers/JointEffortController"  # Since JointA uses effort interface this controller type is  used      
+      joint: "motor_joint"                              # Name of the joint for which this controller belongs to.
       pid: {p: 100.0, i: 10.0, d: 1.0}                  # PID values
