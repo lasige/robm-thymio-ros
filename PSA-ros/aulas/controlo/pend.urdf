@@ -24,19 +24,6 @@
     <material>Gazebo/Red</material>
   </gazebo>
 
-  <transmission name="tran1">
-    <type>transmission_interface/SimpleTransmission</type>
-    <joint name="motor_joint">
-      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
-    </joint>
-    <actuator name="motor1">
-      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
-      <mechanicalReduction>1</mechanicalReduction>
-    </actuator>
-  </transmission>
-
-
-
 
  	<link name="base_link">
 		<visual>
@@ -113,7 +100,7 @@
     	<limit lower="-3.1416" upper="3.1416" effort="10" velocity="3"/>
   	</joint>
   
- <joint name="motor_joint" type="continuous">
+ <joint name="motor_joint" type="revolute">
     	<parent link="body_link"/>
     	<child link="motor_link"/>
     	<origin xyz="0 0 1.20" rpy="0 1.5870 0"/>
@@ -135,5 +122,17 @@
     	<axis xyz="0 0 1"/>
     	<limit lower="-3.1416" upper="3.1416" effort="10" velocity="3"/>
   	</joint>
+
+
+  <transmission name="tran1">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="motor_joint">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="motor1">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
 
 </robot>
