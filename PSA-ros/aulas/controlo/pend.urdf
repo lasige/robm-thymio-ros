@@ -63,8 +63,8 @@
 				<cylinder radius="0.15" length="0.4"/>
 			</geometry>
 			<material name="Cyan1">
-	       		<color rgba="0 0.9 0.9 1.0"/>
-	     	</material>
+	       			<color rgba="0 0.9 0.9 1.0"/>
+	     		</material>
 		</visual>	
 	</link>
 	
@@ -98,8 +98,8 @@
     	<origin xyz="0 0 1.20" rpy="0 1.5870 0"/>
     	<axis xyz="0 0 1"/>
     	<limit lower="-3.1416" upper="3.1416" effort="100" velocity="30"/>
-	<hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
-  	</joint>
+	<dynamics damping="0.7"/>
+	  	</joint>
  <joint name="arm_joint" type="fixed">
     	<parent link="motor_link"/>
     	<child link="arm_link"/>
@@ -121,5 +121,17 @@
   <gazebo reference="body_link">
     <material>Gazebo/Red</material>
   </gazebo>
+
+  <transmission name="tran1">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="motor_joint">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="motor1">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+
 
 </robot>
