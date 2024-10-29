@@ -6,6 +6,17 @@
 	</plugin>
 </gazebo>
 
+<link name="world"></link>
+
+<!-- A simple fixed joint from our empty world link, to our base. -->
+<!-- The base origin is offset from the world origin. -->
+<joint name="base_joint" type="fixed">
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <parent link="world"/>
+    <child link="base_link"/>        
+</joint>
+
+
  	<link name="base_link">
 		<visual>
 		    <origin xyz="0 0 0.0" rpy="0 0 0"/>
