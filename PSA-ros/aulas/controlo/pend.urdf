@@ -11,16 +11,16 @@
 		    <origin xyz="0 0 0.0" rpy="0 0 0"/>
 			<geometry>
 				<cylinder radius="0.25" length="0.1"/>
-			</geometry>
-          		<inertial>
-				<mass value="100" />
-		       		<origin xyz="0 0 0" rpy="0 0 0"/>
-    	   			<inertia ixx="10"  ixy="0"  ixz="0" iyy="10" iyz="0" izz="10" />
-    			</inertial>
+			</geometry>          		
 			<material name="Cyan1">
-	       		<color rgba="0 0.9 0.9 1.0"/>
+	       			<color rgba="0 0.9 0.9 1.0"/>
 	     		</material>
 		</visual>	
+		<inertial>
+			<mass value="100" />
+	       		<origin xyz="0 0 0" rpy="0 0 0"/>
+       			<inertia ixx="10"  ixy="0"  ixz="0" iyy="10" iyz="0" izz="10" />
+    		</inertial>
 	</link>
 	
 	<link name="body_link">
@@ -34,7 +34,7 @@
 	     	</material>
 		</visual>	
 	</link>
-<link name="arm_link">
+	<link name="arm_link">
 		<visual>
 		    <origin xyz="0.0 0.0 0.40" rpy="0 0 0"/>
 			<geometry>
@@ -64,14 +64,13 @@
       </geometry>
       <material name="green">
             <color rgba="0 1 0 1"/>
-      </material>
-      <inertial>
+      </material>     
+    </visual>
+    <inertial>
         <mass value="10" />
      	  <origin xyz="0 0 0" rpy="0 0 0"/>
     	  <inertia ixx="10"  ixy="0"  ixz="0" iyy="10" iyz="0" izz="10" />
       </inertial>
-
-    </visual>
   </link>
 
 	<joint name="first_joint" type="fixed">
@@ -88,7 +87,7 @@
     	<origin xyz="0 0 1.20" rpy="0 1.5870 0"/>
     	<axis xyz="0 0 1"/>
     	<limit lower="-3.1416" upper="3.1416" effort="100" velocity="30"/>
-	    	<hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+	<hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
   	</joint>
  <joint name="arm_joint" type="fixed">
     	<parent link="motor_link"/>
