@@ -2,7 +2,7 @@
 source /ros/devel/setup.bash
 roslaunch gazebo_ros empty_world.launch &
 echo "Waiting..."
-sleep 15
+sleep 5
 echo "Waiting..."
 rosparam set robot_description -t pend.urdf
 rosparam load control.yaml
