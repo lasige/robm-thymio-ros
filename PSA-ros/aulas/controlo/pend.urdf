@@ -23,6 +23,13 @@
   <gazebo reference="body_link">
     <material>Gazebo/Red</material>
   </gazebo>
+  <gazebo reference="arm_link">
+    <material>Gazebo/Orange</material>
+  </gazebo>
+  <gazebo reference="ball_link">
+    <material>Gazebo/Green</material>
+  </gazebo>
+
 
 
  	<link name="base_link">
